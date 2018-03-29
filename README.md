@@ -4,8 +4,6 @@ This extension connects to your McIntosh device (Preamplifier, Integrated Amplif
 
 ---------------------
 
-McIntosh's RS232 protocols for each device are slightly different.  The first protocol implemented here is "TN51".
-
 This extension was tested on Mcintosh C47 Preamplifier.
 
 ---------------------

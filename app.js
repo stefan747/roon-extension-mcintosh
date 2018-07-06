@@ -10,7 +10,7 @@ var McIntosh             = require("node-mcintosh"),
 var roon = new RoonApi({
     extension_id:        'com.stefan747.roon.mcintosh',
     display_name:        'McIntosh Volume/Source Control',
-    display_version:     "1.0.0",
+    display_version:     "1.0.1",
     publisher:           'Stefan Kruzlik',
     email:               'stefan.kruzlik@gmail.com',
     website:             'https://github.com/stefan747/roon-extension-mcintosh',
@@ -18,7 +18,7 @@ var roon = new RoonApi({
 
 var mysettings = roon.load_config("settings") || {
     serialport:    "",
-    setsource:     "8",
+    setsource:     "1",
     initialvolume: 10,
 	startuptime: 7
 };
@@ -43,9 +43,18 @@ function makelayout(settings) {
         type:    "dropdown",
         title:   "Source for Convenience Switch",
         values:  [
-            { value: "8", title: "USB"          },
-            { value: "4", title: "CD"           },
-            { value: "3", title: "TV"           }
+            { value: "1",  title: "BAL 1"         },
+            { value: "2",  title: "BAL 2"         },
+            { value: "3",  title: "UNBAL 1"       },
+            { value: "4",  title: "UNBAL 2"       },
+            { value: "5",  title: "UNBAL 3"       },
+            { value: "6",  title: "MM PHONO"      },
+            { value: "7",  title: "MC PHONO"      },
+            { value: "8",  title: "USB"           },
+            { value: "9",  title: "MCT"           },
+            { value: "10", title: "OPTI 1"        },
+            { value: "11", title: "OPTI 2"        },
+            { value: "12", title: "COAX"          }
         ],
         setting: "setsource",
     });

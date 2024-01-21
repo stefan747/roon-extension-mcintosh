@@ -1,6 +1,6 @@
 {
   "name": "roon-extension-mcintosh",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Roon Extension to let Roon control McIntosh devices via RS232",
   "main": "app.js",
   "author": "Stefan Kruzlik",

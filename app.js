@@ -39,6 +39,13 @@ function makelayout(settings) {
             setting:   "serialport",
         });
     
+        l.layout.push({
+            type:      "integer",
+            title:     "Baud Rate",
+            min: 0,
+            setting:   "baudrate",
+        });
+    
     l.layout.push({
         type:    "dropdown",
         title:   "Source for Convenience Switch",
@@ -94,6 +101,7 @@ var svc_settings = new RoonApiSettings(roon, {
             var oldmode = mysettings.mode;
             var oldip = mysettings.ip;
             var oldport = mysettings.serialport;
+            var oldbaudrate = mysettings.baudrate;
             mysettings = l.values;
             svc_settings.update_settings(l);
             let force = false;
@@ -133,6 +141,7 @@ function setup() {
         return;
     }
     opts.port = mysettings.serialport;
+    opts.baud = parseInt(mysettings.baudrate);
     console.log(opts);
     mcintosh.control.start(opts);
 }
